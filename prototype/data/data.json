@@ -1,0 +1,1518 @@
+{
+  "attributes": [
+    {
+      "id": "lotsofwater",
+      "name": "Lots of water"
+    },
+    {
+      "id": "exercise",
+      "name": "Exercise"
+    }
+  ],
+  "items": [
+    {
+      "id": "resorthammock",
+      "name": "Resort hammock",
+      "description": "The breeze feels so nice when you're lying on this hammock. It's perfect for dozing off!",
+      "category": "Relaxation",
+      "image": "images/items/resorthammock.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "tablesetting",
+      "name": "Table setting",
+      "description": "This cutlery immediately makes any table look like it belongs in a high-class restaurant",
+      "category": "Decoration",
+      "image": "images/items/tablesetting.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "paperpartycups",
+      "name": "Paper Party cups",
+      "description": "Paper cups that are easy to carry- perfect for hosting a party!",
+      "category": "Decoration",
+      "image": "images/items/paperpartycups.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "sodafloat",
+      "name": "Soda float",
+      "description": "Food loved by one of Eevee's friends. Be sure to prepare a table and chair too!",
+      "category": "Decoration",
+      "image": "images/items/sodafloat.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "shavedice",
+      "name": "Shaved ice",
+      "description": "Food loved by one of Eevee's friends. Be sure to prepare a table and chair too!",
+      "category": "Decoration",
+      "image": "images/items/shavedice.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "modernsink",
+      "name": "Modern sink",
+      "description": "A state-of-the-art sink that even has a drain. Turn the handle to make water flow out",
+      "category": "Toy",
+      "image": "images/items/modernsink.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "toilet",
+      "name": "Toilet",
+      "description": "Lift the cover and sit on the toilet for as long as you like",
+      "category": "Decoration",
+      "image": "images/items/toilet.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "sink",
+      "name": "Sink",
+      "description": "A stylish sink on a wooden stand. Turn on the faucet to make water pour out.",
+      "category": "Toy",
+      "image": "images/items/sink.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "bathtimeset",
+      "name": "Bathtime set",
+      "description": "Shampoo, towels and a toy-everything you need to make bath time a blast!",
+      "category": "Toy",
+      "image": "images/items/bathtimeset.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "cleaningsupplies",
+      "name": "Cleaning supplies",
+      "description": "Detergent, a dust cloth, and a Mareep sponge are all you need to become a cleaning master!",
+      "category": "Toy",
+      "image": "images/items/cleaningsupplies.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "shower",
+      "name": "Shower",
+      "description": "A shower with a simple design. Place it next to a bathtub to make your bathroom complete",
+      "category": "Toy",
+      "image": "images/items/shower.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "bathtub",
+      "name": "Bathtub",
+      "description": "A bathtub with a simple design. Fill it up with water to enjoy a nice soak",
+      "category": "Decoration",
+      "image": "images/items/bathtub.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "bouncybluebathtub",
+      "name": "Bouncy blue bathtub",
+      "description": "A bathtub that lets you experience waves and bubbles, even without a single drop of water inside.",
+      "category": "Decoration",
+      "image": "images/items/bouncybluebathtub.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "humidifier",
+      "name": "Humidifier",
+      "description": "A humidifier with a  distinct round shape. Turn it on to increase the humidity level nearby.",
+      "category": "Decoration",
+      "image": "images/items/humidifier.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "funkydiffuser",
+      "name": "Funky diffuser",
+      "description": "The symbol on it looks dangerous, but it doesn't seem like this will actually spew out poison gas...",
+      "category": "Toy",
+      "image": "images/items/funkydiffuser.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "waterbasin",
+      "name": "Water basin",
+      "description": "Fill this with water so Pok\u00e9mon can do some watering for you",
+      "category": "Decoration",
+      "image": "images/items/waterbasin.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "canoe",
+      "name": "Canoe",
+      "description": "A paddle, bucket and rope is all you need for a journey out to sea",
+      "category": "Toy",
+      "image": "images/items/canoe.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "inflatableboat",
+      "name": "Inflatable boat",
+      "description": "Feels great whether you lie down on it like a bed, or float it on the water like a boat.",
+      "category": "Relaxation",
+      "image": "images/items/inflatableboat.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "beachparasol",
+      "name": "Beach parasol",
+      "description": "Place one of these on the beach for protection from scorching sunbeams",
+      "category": "Relaxation",
+      "image": "images/items/beachparasol.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "horseafountain",
+      "name": "Horsea fountain",
+      "description": "Installing this near water should raise the humidity of its surroundings",
+      "category": "Toy",
+      "image": "images/items/horseafountain.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "firehydrant",
+      "name": "Fire hydrant",
+      "description": "This device spews water for putting out fires, but you're not really sure how to use it,...",
+      "category": "Decoration",
+      "image": "images/items/firehydrant.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "sprinkler",
+      "name": "Sprinkler",
+      "description": "An irrigation device that sprays water in a wide area. Try putting one near the waterside",
+      "category": "Toy",
+      "image": "images/items/sprinkler.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "mysticwater",
+      "name": "Mystic Water",
+      "description": "A teardrop-shaped gem. Try hanging it up in a frame!",
+      "category": null,
+      "image": "images/items/mysticwater.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "waterpillarquarter",
+      "name": "Water pillar quarter",
+      "description": "A fancy pillar filled with water. Its faint glow is beautiful, even in darkness",
+      "category": "Decoration",
+      "image": "images/items/waterpillarquarter.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "hoppipwaterbottle",
+      "name": "Hoppip water bottle",
+      "description": "This water bottle with a shoulder strap is perfect for picnics! The Hoopip pattern is very cute.",
+      "category": "Decoration",
+      "image": "images/items/hoppipwaterbottle.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "juicetrio",
+      "name": "Juice trio",
+      "description": "Bottles of colored juices. One of them is capped off nicely with a flower-shaped lid.",
+      "category": "Decoration",
+      "image": "images/items/juicetrio.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "teawareset",
+      "name": "Teaware set",
+      "description": "A stylish ceramic tea set. Looks perfect for serving guests!",
+      "category": "Decoration",
+      "image": "images/items/teawareset.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "bottledship",
+      "name": "Bottled ship",
+      "description": "A model ship inside a glass bottle. These are actually really difficult to make!",
+      "category": "Toy",
+      "image": "images/items/bottledship.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "gyaradosfountain",
+      "name": "Gyarados fountain",
+      "description": "A fountain that looks like Gyarados shooting water out of its mouth. Place it near a water source.",
+      "category": "Toy",
+      "image": "images/items/gyaradosfountain.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "bubblemachine",
+      "name": "Bubble machine",
+      "description": "Creates bubbles when powered on. Try placing it near mud or underwater crops.",
+      "category": "Toy",
+      "image": "images/items/bubblemachine.png",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "punchinggame",
+      "name": "Punching game",
+      "description": "Slug this machine real good with your first, and it'll tell you how strong your punch is",
+      "category": "Toy",
+      "image": "images/items/punchinggame.png",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "wobbuffetwobbler",
+      "name": "Wobbuffet Wobbler",
+      "description": "An exceptionally durable Wobbuffet doll. It gets back up no matter how many times you knock it over.",
+      "category": "Toy",
+      "image": "images/items/wobbuffetwobbler.png",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "punchingbag",
+      "name": "Punching bag",
+      "description": "Heavy and packed full of sand. Perfect for practicing punches and kicks!",
+      "category": "Toy",
+      "image": "images/items/punchingbag.png",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "bike",
+      "name": "Bike",
+      "description": "A cool bicycle that looks high-end. It sparkles as if it's brand-new",
+      "category": "Toy",
+      "image": "images/items/bike.png",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "beachvolleyballset",
+      "name": "Beach volleyball set",
+      "description": "This set includes not only a volleyball and net but also towels and water",
+      "category": "Toy",
+      "image": "images/items/beachvolleyballset.png",
+      "attributes": [
+        "exercise"
+      ]
+    }
+  ],
+  "pokemon": [
+    {
+      "id": "bulbasaur",
+      "name": "Bulbasaur",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "squirtle",
+      "name": "Squirtle",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "wartortle",
+      "name": "Wartortle",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "blastoise",
+      "name": "Blastoise",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "oddish",
+      "name": "Oddish",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "bellsprout",
+      "name": "Bellsprout",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "slowpoke",
+      "name": "Slowpoke",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "slowbro",
+      "name": "Slowbro",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "slowking",
+      "name": "Slowking",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "tangela",
+      "name": "Tangela",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "tangrowth",
+      "name": "Tangrowth",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "magikarp",
+      "name": "Magikarp",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "gyarados",
+      "name": "Gyarados",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "shellos",
+      "name": "Shellos",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "shelloseastsea",
+      "name": "Shellos East Sea",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "gastrodon",
+      "name": "Gastrodon",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "gastrodoneastsea",
+      "name": "Gastrodon East Sea",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "goomy",
+      "name": "Goomy",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "sliggoo",
+      "name": "Sliggoo",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "goodra",
+      "name": "Goodra",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "cramorant",
+      "name": "Cramorant",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "psyduck",
+      "name": "Psyduck",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "golduck",
+      "name": "Golduck",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "lapras",
+      "name": "Lapras",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "azurill",
+      "name": "Azurill",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "marill",
+      "name": "Marill",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "azumarill",
+      "name": "Azumarill",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "clodsire",
+      "name": "Clodsire",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "wingull",
+      "name": "Wingull",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "pelipper",
+      "name": "Pelipper",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "piplup",
+      "name": "Piplup",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "prinplup",
+      "name": "Prinplup",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "empoleon",
+      "name": "Empoleon",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "tatsugiricurlyform",
+      "name": "Tatsugiri Curly Form",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "tatsugiridroopyform",
+      "name": "Tatsugiri Droopy Form",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "tatsugiristretchyform",
+      "name": "Tatsugiri Stretchy Form",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "lotad",
+      "name": "Lotad",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "lombre",
+      "name": "Lombre",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "ludicolo",
+      "name": "Ludicolo",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "poliwag",
+      "name": "Poliwag",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "poliwhirl",
+      "name": "Poliwhirl",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "poliwrath",
+      "name": "Poliwrath",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "politoed",
+      "name": "Politoed",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "dratini",
+      "name": "Dratini",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "dragonair",
+      "name": "Dragonair",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "snivy",
+      "name": "Snivy",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "servine",
+      "name": "Servine",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "serperior",
+      "name": "Serperior",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "froakie",
+      "name": "Froakie",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "frogadier",
+      "name": "Frogadier",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "greninja",
+      "name": "Greninja",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "vaporeon",
+      "name": "Vaporeon",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "glaceon",
+      "name": "Glaceon",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "kyogre",
+      "name": "Kyogre",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "suicune",
+      "name": "Suicune",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "volcanion",
+      "name": "Volcanion",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "articuno",
+      "name": "Articuno",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "lugia",
+      "name": "Lugia",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "feebas",
+      "name": "Feebas",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "milotic",
+      "name": "Milotic",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "shellder",
+      "name": "Shellder",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "cloyster",
+      "name": "Cloyster",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "seadra",
+      "name": "Seadra",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "kingdra",
+      "name": "Kingdra",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "staryu",
+      "name": "Staryu",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "starmie",
+      "name": "Starmie",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "totodile",
+      "name": "Totodile",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "croconaw",
+      "name": "Croconaw",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "feraligatr",
+      "name": "Feraligatr",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "chinchou",
+      "name": "Chinchou",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "lanturn",
+      "name": "Lanturn",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "corsola",
+      "name": "Corsola",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "mudkip",
+      "name": "Mudkip",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "marshtomp",
+      "name": "Marshtomp",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "swampert",
+      "name": "Swampert",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "carvanha",
+      "name": "Carvanha",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "sharpedo",
+      "name": "Sharpedo",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "barboach",
+      "name": "Barboach",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "whiscash",
+      "name": "Whiscash",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "corphish",
+      "name": "Corphish",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "crawdaunt",
+      "name": "Crawdaunt",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "luvdisc",
+      "name": "Luvdisc",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "buizel",
+      "name": "Buizel",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "floatzel",
+      "name": "Floatzel",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "finneon",
+      "name": "Finneon",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "lumineon",
+      "name": "Lumineon",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "frillishmaleform",
+      "name": "Frillish Male Form",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "frillishfemaleform",
+      "name": "Frillish Female Form",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "jellicentmaleform",
+      "name": "Jellicent Male Form",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "jellicentfemaleform",
+      "name": "Jellicent Female Form",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "alomomola",
+      "name": "Alomomola",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "popplio",
+      "name": "Popplio",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "brionne",
+      "name": "Brionne",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "primarina",
+      "name": "Primarina",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "mareanie",
+      "name": "Mareanie",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "toxapex",
+      "name": "Toxapex",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "wimpod",
+      "name": "Wimpod",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "golisopod",
+      "name": "Golisopod",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "bruxish",
+      "name": "Bruxish",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "chewtle",
+      "name": "Chewtle",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "drednaw",
+      "name": "Drednaw",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "wiglett",
+      "name": "Wiglett",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "wugtrio",
+      "name": "Wugtrio",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "veluza",
+      "name": "Veluza",
+      "attributes": [
+        "lotsofwater",
+        "exercise"
+      ]
+    },
+    {
+      "id": "phione",
+      "name": "Phione",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "manaphy",
+      "name": "Manaphy",
+      "attributes": [
+        "lotsofwater"
+      ]
+    },
+    {
+      "id": "charmander",
+      "name": "Charmander",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "charmeleon",
+      "name": "Charmeleon",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "charizard",
+      "name": "Charizard",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "onix",
+      "name": "Onix",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "cubone",
+      "name": "Cubone",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "marowak",
+      "name": "Marowak",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "tyrogue",
+      "name": "Tyrogue",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "hitmonlee",
+      "name": "Hitmonlee",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "hitmonchan",
+      "name": "Hitmonchan",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "hitmontop",
+      "name": "Hitmontop",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "scyther",
+      "name": "Scyther",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "scizor",
+      "name": "Scizor",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "pinsir",
+      "name": "Pinsir",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "heracross",
+      "name": "Heracross",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "excadrill",
+      "name": "Excadrill",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "timburr",
+      "name": "Timburr",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "gurdurr",
+      "name": "Gurdurr",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "conkeldurr",
+      "name": "Conkeldurr",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "fraxure",
+      "name": "Fraxure",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "haxorus",
+      "name": "Haxorus",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "farfetch'd",
+      "name": "Farfetch'd",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "electabuzz",
+      "name": "Electabuzz",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "electivire",
+      "name": "Electivire",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "combusken",
+      "name": "Combusken",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "blaziken",
+      "name": "Blaziken",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "makuhita",
+      "name": "Makuhita",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "hariyama",
+      "name": "Hariyama",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "absol",
+      "name": "Absol",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "vikavolt",
+      "name": "Vikavolt",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "pawmo",
+      "name": "Pawmo",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "pawmot",
+      "name": "Pawmot",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "machop",
+      "name": "Machop",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "machoke",
+      "name": "Machoke",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "machamp",
+      "name": "Machamp",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "geodude",
+      "name": "Geodude",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "graveler",
+      "name": "Graveler",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "golem",
+      "name": "Golem",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "magmar",
+      "name": "Magmar",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "magmortar",
+      "name": "Magmortar",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "tyranitar",
+      "name": "Tyranitar",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "riolu",
+      "name": "Riolu",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "lucario",
+      "name": "Lucario",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "charcadet",
+      "name": "Charcadet",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "armarouge",
+      "name": "Armarouge",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "gallade",
+      "name": "Gallade",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "trapinch",
+      "name": "Trapinch",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "metagross",
+      "name": "Metagross",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "tinkatink",
+      "name": "Tinkatink",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "tinkatuff",
+      "name": "Tinkatuff",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "tinkaton",
+      "name": "Tinkaton",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "cranidos",
+      "name": "Cranidos",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "rampardos",
+      "name": "Rampardos",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "bastiodon",
+      "name": "Bastiodon",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "tyrunt",
+      "name": "Tyrunt",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "tyrantrum",
+      "name": "Tyrantrum",
+      "attributes": [
+        "exercise"
+      ]
+    },
+    {
+      "id": "entei",
+      "name": "Entei",
+      "attributes": [
+        "exercise"
+      ]
+    }
+  ]
+}

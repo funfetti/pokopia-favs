@@ -1,0 +1,579 @@
+<style>
+  .pkp-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 640px;
+    margin: 0 auto;
+    background: #14141a;
+    padding: 20px 16px 28px;
+    border-radius: 16px;
+  }
+  .pkp-header {
+    margin-bottom: 20px;
+  }
+  .pkp-header h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #f2f1f8;
+    margin: 0 0 4px 0;
+  }
+  .pkp-header p {
+    font-size: 13px;
+    color: #8f8ea3;
+    margin: 0;
+  }
+  .pkp-combo {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  #pkp-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #34333f;
+    background: #1e1d27;
+    color: #f2f1f8;
+    font-size: 14px;
+  }
+  #pkp-input:focus {
+    outline: none;
+    border-color: #6c5fc7;
+  }
+  .pkp-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #1e1d27;
+    border: 1px solid #34333f;
+    border-radius: 10px;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+  }
+  .pkp-dropdown.open {
+    display: block;
+  }
+  .pkp-option {
+    padding: 9px 12px;
+    font-size: 14px;
+    color: #f2f1f8;
+    cursor: pointer;
+  }
+  .pkp-option:hover,
+  .pkp-option.active {
+    background: #2a2938;
+  }
+  .pkp-option-empty {
+    padding: 9px 12px;
+    font-size: 13px;
+    color: #6c6a7d;
+  }
+  .pkp-fav-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .pkp-pill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid;
+  }
+  .pkp-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pkp-item-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #2a2934;
+    background: #1a1922;
+  }
+  .pkp-item-thumb {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #f2f1f8;
+  }
+  .pkp-item-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  .pkp-item-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #f2f1f8;
+  }
+  .pkp-item-attrs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .pkp-attr-tag {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid;
+  }
+  .pkp-attr-tag.faded {
+    background: #232230 !important;
+    color: #6c6a7d !important;
+    border-color: #2e2d3a !important;
+  }
+  .pkp-item-category {
+    font-size: 11px;
+    color: #6c6a7d;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pkp-empty {
+    font-size: 13px;
+    color: #6c6a7d;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .pkp-filter-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  .pkp-category-filter {
+    position: relative;
+  }
+  .pkp-category-btn {
+    font-size: 12px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid #34333f;
+    background: #1e1d27;
+    color: #f2f1f8;
+    cursor: pointer;
+  }
+  .pkp-category-btn:hover {
+    border-color: #6c5fc7;
+  }
+  .pkp-category-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    min-width: 170px;
+    background: #1e1d27;
+    border: 1px solid #34333f;
+    border-radius: 10px;
+    z-index: 10;
+    padding: 6px;
+    display: none;
+  }
+  .pkp-category-dropdown.open {
+    display: block;
+  }
+  .pkp-category-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #f2f1f8;
+    cursor: pointer;
+  }
+  .pkp-category-option:hover {
+    background: #2a2938;
+  }
+  .pkp-category-option input[type="checkbox"] {
+    accent-color: #6c5fc7;
+  }
+  .pkp-category-select-all {
+    font-weight: 500;
+  }
+  .pkp-category-divider {
+    height: 1px;
+    background: #34333f;
+    margin: 4px 2px 6px;
+  }
+</style>
+
+<div class="pkp-wrap">
+  <div class="pkp-header">
+    <h1>Pokopia favorite item matcher</h1>
+    <p>Type a pokemon name, see items that share its favorite attributes</p>
+  </div>
+
+  <div class="pkp-combo">
+    <input id="pkp-input" type="text" placeholder="Search pokemon..." autocomplete="off" />
+    <div class="pkp-dropdown" id="pkp-dropdown"></div>
+  </div>
+
+  <div class="pkp-fav-row" id="pkp-favs"></div>
+
+  <div class="pkp-filter-row">
+    <div class="pkp-category-filter">
+      <button type="button" class="pkp-category-btn" id="pkp-category-btn">All categories</button>
+      <div class="pkp-category-dropdown" id="pkp-category-dropdown"></div>
+    </div>
+  </div>
+
+  <div class="pkp-items" id="pkp-items"></div>
+</div>
+
+<script>
+// Populated from data/data.json at load time — see init() below.
+let data = { attributes: [], items: [], pokemon: [] };
+
+// distinct color per attribute id: [background, text, border]
+const attrColors = {
+  lotsofwater:         ["#1c2f42", "#7fb8e8", "#2f5473"],
+  oceanvibes:          ["#123a3a", "#5fd4c9", "#1f6a63"],
+  groupactivities:     ["#402313", "#f0a15c", "#6b3c1f"],
+  rides:               ["#3a1236", "#e281d8", "#672462"],
+  wobblystuff:         ["#2c2745", "#b8adf7", "#4a3f80"],
+  blocky:              ["#25304a", "#8fa8e0", "#3c4f7a"],
+  complicated:         ["#401818", "#e88585", "#6b2626"],
+  gatherings:          ["#3d3413", "#e3c96a", "#665926"],
+  exercise:            ["#153a20", "#6fd18a", "#25612f"],
+  simple:              ["#26262f", "#a3a1b5", "#3d3c4d"],
+  nature:              ["#1e3616", "#93cf6f", "#345e26"]
+};
+const defaultColor = ["#232230", "#8f8ea3", "#3a3948"];
+const colorFor = id => attrColors[id] || defaultColor;
+
+// The URL slug (e.g. "lotsofwater") has no separators, so it can't be
+// split back into words. Populated from data.attributes ({id, name} pairs)
+// once data/data.json loads.
+let attrNames = {};
+const attrLabel = id => attrNames[id] || id;
+
+const inputEl = document.getElementById("pkp-input");
+const dropdownEl = document.getElementById("pkp-dropdown");
+const favsEl = document.getElementById("pkp-favs");
+const itemsEl = document.getElementById("pkp-items");
+const categoryBtnEl = document.getElementById("pkp-category-btn");
+const categoryDropdownEl = document.getElementById("pkp-category-dropdown");
+
+let currentPokemonId = null;
+let activeIndex = -1;
+let selectedCategories = new Set();
+
+function allCategories() {
+  return [...new Set(data.items.map(i => i.category).filter(Boolean))].sort();
+}
+
+function updateCategoryButtonLabel() {
+  if (selectedCategories.size === 0) {
+    categoryBtnEl.textContent = "All categories";
+  } else if (selectedCategories.size === 1) {
+    categoryBtnEl.textContent = [...selectedCategories][0];
+  } else {
+    categoryBtnEl.textContent = selectedCategories.size + " categories";
+  }
+}
+
+function renderCategoryDropdown() {
+  // Built once; checkbox handlers below only mutate existing elements'
+  // .checked/.indeterminate afterward rather than rebuilding the DOM,
+  // since replacing innerHTML mid-click (while the click is still bubbling
+  // from the checkbox that triggered it) detaches that checkbox and makes
+  // the document-level "click outside closes the dropdown" listener fire.
+  categoryDropdownEl.innerHTML = "";
+  const categories = allCategories();
+
+  const selectAllOption = document.createElement("label");
+  selectAllOption.className = "pkp-category-option pkp-category-select-all";
+  const selectAllCheckbox = document.createElement("input");
+  selectAllCheckbox.type = "checkbox";
+  const selectAllText = document.createElement("span");
+  selectAllText.textContent = "Select all";
+  selectAllOption.appendChild(selectAllCheckbox);
+  selectAllOption.appendChild(selectAllText);
+  categoryDropdownEl.appendChild(selectAllOption);
+
+  const divider = document.createElement("div");
+  divider.className = "pkp-category-divider";
+  categoryDropdownEl.appendChild(divider);
+
+  function syncSelectAllCheckbox() {
+    selectAllCheckbox.checked = selectedCategories.size === categories.length;
+    selectAllCheckbox.indeterminate = selectedCategories.size > 0 && selectedCategories.size < categories.length;
+  }
+
+  const categoryCheckboxes = categories.map(cat => {
+    const option = document.createElement("label");
+    option.className = "pkp-category-option";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = selectedCategories.has(cat);
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        selectedCategories.add(cat);
+      } else {
+        selectedCategories.delete(cat);
+      }
+      syncSelectAllCheckbox();
+      updateCategoryButtonLabel();
+      render(currentPokemonId);
+    });
+
+    const text = document.createElement("span");
+    text.textContent = cat;
+
+    option.appendChild(checkbox);
+    option.appendChild(text);
+    categoryDropdownEl.appendChild(option);
+
+    return { cat, checkbox };
+  });
+
+  selectAllCheckbox.addEventListener("change", () => {
+    if (selectAllCheckbox.checked) {
+      categories.forEach(cat => selectedCategories.add(cat));
+    } else {
+      selectedCategories.clear();
+    }
+    categoryCheckboxes.forEach(({ cat, checkbox }) => {
+      checkbox.checked = selectedCategories.has(cat);
+    });
+    selectAllCheckbox.indeterminate = false;
+    updateCategoryButtonLabel();
+    render(currentPokemonId);
+  });
+
+  syncSelectAllCheckbox();
+}
+
+categoryBtnEl.addEventListener("click", () => {
+  categoryDropdownEl.classList.toggle("open");
+});
+
+document.addEventListener("click", e => {
+  if (!e.target.closest(".pkp-category-filter")) {
+    categoryDropdownEl.classList.remove("open");
+  }
+});
+
+function openDropdown(list) {
+  dropdownEl.innerHTML = "";
+  activeIndex = -1;
+
+  if (list.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "pkp-option-empty";
+    empty.textContent = "No pokemon found";
+    dropdownEl.appendChild(empty);
+  } else {
+    list.forEach(p => {
+      const opt = document.createElement("div");
+      opt.className = "pkp-option";
+      opt.textContent = p.name;
+      opt.addEventListener("mousedown", e => {
+        e.preventDefault();
+        selectPokemon(p.id);
+      });
+      dropdownEl.appendChild(opt);
+    });
+  }
+
+  dropdownEl.classList.add("open");
+}
+
+function closeDropdown() {
+  dropdownEl.classList.remove("open");
+}
+
+function filterPokemon(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return data.pokemon;
+  return data.pokemon.filter(p => p.name.toLowerCase().includes(q));
+}
+
+function selectPokemon(id) {
+  currentPokemonId = id;
+  const pokemon = data.pokemon.find(p => p.id === id);
+  inputEl.value = pokemon.name;
+  closeDropdown();
+  render(id);
+}
+
+inputEl.addEventListener("focus", () => openDropdown(filterPokemon(inputEl.value)));
+inputEl.addEventListener("input", () => openDropdown(filterPokemon(inputEl.value)));
+inputEl.addEventListener("blur", () => {
+  // if what's typed doesn't match a pokemon exactly, revert to current selection
+  const typed = inputEl.value.trim().toLowerCase();
+  const match = data.pokemon.find(p => p.name.toLowerCase() === typed);
+  if (!match) {
+    const current = data.pokemon.find(p => p.id === currentPokemonId);
+    inputEl.value = current.name;
+  }
+  closeDropdown();
+});
+inputEl.addEventListener("keydown", e => {
+  const options = Array.from(dropdownEl.querySelectorAll(".pkp-option"));
+  if (!dropdownEl.classList.contains("open") || options.length === 0) return;
+
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    activeIndex = Math.min(activeIndex + 1, options.length - 1);
+    options.forEach((o, i) => o.classList.toggle("active", i === activeIndex));
+    options[activeIndex].scrollIntoView({ block: "nearest" });
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    activeIndex = Math.max(activeIndex - 1, 0);
+    options.forEach((o, i) => o.classList.toggle("active", i === activeIndex));
+    options[activeIndex].scrollIntoView({ block: "nearest" });
+  } else if (e.key === "Enter") {
+    e.preventDefault();
+    const list = filterPokemon(inputEl.value);
+    const target = activeIndex >= 0 ? list[activeIndex] : list[0];
+    if (target) selectPokemon(target.id);
+  } else if (e.key === "Escape") {
+    closeDropdown();
+  }
+});
+
+function render(pokemonId) {
+  const pokemon = data.pokemon.find(p => p.id === pokemonId);
+
+  favsEl.innerHTML = "";
+  pokemon.attributes.forEach(attr => {
+    const [bg, text, border] = colorFor(attr);
+    const pill = document.createElement("span");
+    pill.className = "pkp-pill";
+    pill.style.background = bg;
+    pill.style.color = text;
+    pill.style.borderColor = border;
+    pill.textContent = attrLabel(attr);
+    favsEl.appendChild(pill);
+  });
+
+  const matches = data.items
+    .map(item => {
+      const matchedAttrs = item.attributes.filter(a => pokemon.attributes.includes(a));
+      return { ...item, matchedAttrs, matchCount: matchedAttrs.length };
+    })
+    .filter(item => item.matchCount > 0)
+    .filter(item => selectedCategories.size === 0 || selectedCategories.has(item.category))
+    .sort((a, b) => b.matchCount - a.matchCount || a.name.localeCompare(b.name));
+
+  itemsEl.innerHTML = "";
+
+  if (matches.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "pkp-empty";
+    empty.textContent = "No items match this pokemon's favorites yet";
+    itemsEl.appendChild(empty);
+    return;
+  }
+
+  matches.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "pkp-item-card";
+
+    const thumb = document.createElement("div");
+    thumb.className = "pkp-item-thumb";
+    if (item.image) {
+      const img = document.createElement("img");
+      img.src = "data/" + item.image;
+      img.alt = item.name;
+      img.style.maxWidth = "100%";
+      img.style.maxHeight = "100%";
+      img.style.objectFit = "contain";
+      thumb.appendChild(img);
+    } else {
+      // fallback placeholder when no image was downloaded for this item
+      const thumbColor = colorFor(item.matchedAttrs[0]);
+      thumb.style.background = thumbColor[0];
+      thumb.style.color = thumbColor[1];
+      thumb.textContent = item.name[0].toUpperCase();
+    }
+    card.appendChild(thumb);
+
+    const main = document.createElement("div");
+    main.className = "pkp-item-main";
+
+    const name = document.createElement("div");
+    name.className = "pkp-item-name";
+    name.textContent = item.name;
+    main.appendChild(name);
+
+    const attrsRow = document.createElement("div");
+    attrsRow.className = "pkp-item-attrs";
+    item.attributes.forEach(attr => {
+      const isMatched = item.matchedAttrs.includes(attr);
+      const tag = document.createElement("span");
+      tag.className = "pkp-attr-tag" + (isMatched ? "" : " faded");
+      if (isMatched) {
+        const [bg, text, border] = colorFor(attr);
+        tag.style.background = bg;
+        tag.style.color = text;
+        tag.style.borderColor = border;
+      }
+      tag.textContent = attrLabel(attr);
+      attrsRow.appendChild(tag);
+    });
+    main.appendChild(attrsRow);
+
+    card.appendChild(main);
+
+    if (item.category) {
+      const category = document.createElement("div");
+      category.className = "pkp-item-category";
+      category.textContent = item.category;
+      card.appendChild(category);
+    }
+
+    itemsEl.appendChild(card);
+  });
+}
+
+async function init() {
+  itemsEl.innerHTML = "";
+  const loading = document.createElement("div");
+  loading.className = "pkp-empty";
+  loading.textContent = "Loading data…";
+  itemsEl.appendChild(loading);
+
+  let res;
+  try {
+    res = await fetch("data/data.json");
+    if (!res.ok) throw new Error("HTTP " + res.status);
+  } catch (err) {
+    itemsEl.innerHTML = "";
+    const empty = document.createElement("div");
+    empty.className = "pkp-empty";
+    empty.textContent = "Couldn't load data/data.json (" + err.message + "). " +
+      "If you opened this file directly, browsers block local fetch() — " +
+      "run a local server instead, e.g. `python3 -m http.server` in this folder, " +
+      "then open it via http://localhost:8000/.";
+    itemsEl.appendChild(empty);
+    return;
+  }
+
+  data = await res.json();
+  attrNames = Object.fromEntries(data.attributes.map(a => [a.id, a.name]));
+  data.pokemon.sort((a, b) => a.name.localeCompare(b.name));
+
+  currentPokemonId = data.pokemon[0].id;
+  inputEl.value = data.pokemon[0].name;
+  renderCategoryDropdown();
+  updateCategoryButtonLabel();
+  render(currentPokemonId);
+}
+
+init();
+</script>
