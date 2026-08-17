@@ -147,6 +147,12 @@ def parse_favorites_page(attr_name: str, attr_slug: str, items: dict, pokemon: d
 
                 description = cells[2].get_text(strip=True) if len(cells) > 2 else ""
 
+                # NOTE: despite the field name, this is actually Serebii's "Tag"
+                # value (e.g. "Decoration", "Toy"), not its "Category" value
+                # (e.g. "Furniture"). Individual item pages have both a Category
+                # and a Tag field, but the favorites pages we scrape here only
+                # expose what turns out to be the Tag. Getting the real Category
+                # would mean fetching all ~715 individual item pages separately.
                 category = None
                 if len(cells) > 3:
                     cat_link = cells[3].find("a")
@@ -231,6 +237,43 @@ def parse_favorites_page(attr_name: str, attr_slug: str, items: dict, pokemon: d
                     pokemon[pkmn_slug]["attributes"].append(attr_slug)
 
 
+LOST_RELICS_PAGE = f"{BASE}/pokemonpokopia/lostrelics.shtml"
+
+
+def apply_small_lost_relic_category(items: dict) -> None:
+    """Serebii's lostrelics.shtml page lists item names under size-based
+    section headers (Lost Relic (L), Lost Sunken Relic (L), Lost Relic (S))
+    within one shared table, rather than as separate tables. Items named
+    under "Lost Relic (S)" get their category overridden to "Small Lost
+    Relic" so they're visually distinguishable in the app, since Serebii
+    doesn't otherwise expose this size grouping via the favorites pages."""
+    soup = get_soup(LOST_RELICS_PAGE)
+    small_heading = soup.find(lambda t: t.name == "h3" and t.get_text(strip=True) == "Lost Relic (S)")
+    if not small_heading:
+        print("  ! could not find 'Lost Relic (S)' section, skipping")
+        return
+
+    table = small_heading.find_parent("table")
+    current_section = None
+    small_names = set()
+    for row in table.find_all("tr", recursive=False):
+        header = row.find("h3")
+        if header:
+            current_section = header.get_text(strip=True)
+            continue
+        if current_section == "Lost Relic (S)":
+            cells = row.find_all("td", recursive=False)
+            if len(cells) >= 2:
+                small_names.add(cells[1].get_text(strip=True).lower())
+
+    matched = 0
+    for item in items.values():
+        if item["name"].lower() in small_names:
+            item["category"] = "Small Lost Relic"
+            matched += 1
+    print(f"  Tagged {matched}/{len(small_names)} small lost relics found in scraped items")
+
+
 def main():
     global SKIP_IMAGES
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -254,6 +297,12 @@ def main():
             parse_favorites_page(attr_name, attr_slug, items, pokemon)
         except requests.RequestException as e:
             print(f"  ! failed to fetch {attr_name}: {e}")
+
+    print("\nApplying Small Lost Relic category override...")
+    try:
+        apply_small_lost_relic_category(items)
+    except requests.RequestException as e:
+        print(f"  ! failed to fetch lost relics page: {e}")
 
     data = {
         "attributes": [

@@ -1182,7 +1182,7 @@
       "id": "loadeddice",
       "name": "Loaded Dice",
       "description": "Dice that always rolls a good number. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/loadeddice.png",
       "attributes": [
         "blockystuff"
@@ -4223,7 +4223,7 @@
       "id": "heartscale",
       "name": "Heart Scale",
       "description": "An extremely rare scale. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/heartscale.png",
       "attributes": [
         "cutestuff"
@@ -4233,7 +4233,7 @@
       "id": "fairyfeather",
       "name": "Fairy Feather",
       "description": "A feather that gleams faintly when hit by light. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/fairyfeather.png",
       "attributes": [
         "cutestuff"
@@ -5245,7 +5245,7 @@
       "id": "roomservice",
       "name": "Room Service",
       "description": "A luxurious cart with a metal cloche. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/roomservice.png",
       "attributes": [
         "fabric",
@@ -5331,7 +5331,7 @@
       "id": "blacksludge",
       "name": "Black Sludge",
       "description": "Sludge with a repulsive odor. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/blacksludge.png",
       "attributes": [
         "garbage"
@@ -5449,7 +5449,7 @@
       "id": "clearamulet",
       "name": "Clear Amulet",
       "description": "An amulent that always stays clear and sparkling. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/clearamulet.png",
       "attributes": [
         "glassstuff",
@@ -6033,7 +6033,7 @@
       "id": "rarebone",
       "name": "Rare Bone",
       "description": "An extremely old and valuable bone. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/rarebone.png",
       "attributes": [
         "hardstuff"
@@ -6043,7 +6043,7 @@
       "id": "hardstone",
       "name": "Hard Stone",
       "description": "An unbreakable stone. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/hardstone.png",
       "attributes": [
         "hardstuff"
@@ -6053,7 +6053,7 @@
       "id": "metalcoat",
       "name": "Metal Coat",
       "description": "A special metallic coating. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/metalcoat.png",
       "attributes": [
         "hardstuff"
@@ -6063,7 +6063,7 @@
       "id": "ironball",
       "name": "Iron Ball",
       "description": "A round, black iron ball. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/ironball.png",
       "attributes": [
         "hardstuff",
@@ -6561,7 +6561,7 @@
       "id": "throatspray",
       "name": "Throat Spray",
       "description": "A spray that provides relief for tired throats. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/throatspray.png",
       "attributes": [
         "healing"
@@ -6608,7 +6608,7 @@
       "id": "weaknesspolicy",
       "name": "Weakness Policy",
       "description": "A piece of paper with clean, neat writing on it. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/weaknesspolicy.png",
       "attributes": [
         "lettersandwords"
@@ -6640,7 +6640,7 @@
       "id": "leftovers",
       "name": "Leftovers",
       "description": "Someone's leftover food. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/leftovers.png",
       "attributes": [
         "lookslikefood"
@@ -6751,7 +6751,7 @@
       "id": "charcoal",
       "name": "Charcoal",
       "description": "Charcoal made by burning wood. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/charcoal.png",
       "attributes": [
         "lotsoffire"
@@ -6761,7 +6761,7 @@
       "id": "flameorb",
       "name": "Flame Orb",
       "description": "A bizarre orb that always gives off heat. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/flameorb.png",
       "attributes": [
         "lotsoffire",
@@ -6838,7 +6838,7 @@
       "id": "miracleseed",
       "name": "Miracle Seed",
       "description": "A seed imbued with life force. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/miracleseed.png",
       "attributes": [
         "lotsofnature"
@@ -6848,7 +6848,7 @@
       "id": "silverpowder",
       "name": "Silver Powder",
       "description": "A shiny silver powder. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/silverpowder.png",
       "attributes": [
         "lotsofnature"
@@ -6858,7 +6858,7 @@
       "id": "bigroot",
       "name": "Big Root",
       "description": "The root of some plant. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/bigroot.png",
       "attributes": [
         "lotsofnature"
@@ -6922,7 +6922,7 @@
       "id": "mysticwater",
       "name": "Mystic Water",
       "description": "A teardrop-shaped gem. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/mysticwater.png",
       "attributes": [
         "lotsofwater"
@@ -8386,7 +8386,7 @@
       "id": "nugget",
       "name": "Nugget",
       "description": "It's made of pure gold that gives off a lustrous gleam. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/nugget.png",
       "attributes": [
         "roundstuff",
@@ -8397,7 +8397,7 @@
       "id": "silverbottlecap",
       "name": "Silver Bottle Cap",
       "description": "A lovely silver bottle cap. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/silverbottlecap.png",
       "attributes": [
         "roundstuff",
@@ -8408,7 +8408,7 @@
       "id": "goldbottlecap",
       "name": "Gold Bottle Cap",
       "description": "A lovely gold bottle cap. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/goldbottlecap.png",
       "attributes": [
         "roundstuff",
@@ -8419,7 +8419,7 @@
       "id": "luckyegg",
       "name": "Lucky Egg",
       "description": "A round, white egg. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/luckyegg.png",
       "attributes": [
         "roundstuff"
@@ -8429,7 +8429,7 @@
       "id": "lifeorb",
       "name": "Life Orb",
       "description": "A beautiful red orb. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/lifeorb.png",
       "attributes": [
         "roundstuff"
@@ -8439,7 +8439,7 @@
       "id": "adrenalineorb",
       "name": "Adrenaline Orb",
       "description": "A round, blue ball. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/adrenalineorb.png",
       "attributes": [
         "roundstuff",
@@ -8450,7 +8450,7 @@
       "id": "ringtarget",
       "name": "Ring Target",
       "description": "A target with distinctive balck and white rings. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/ringtarget.png",
       "attributes": [
         "roundstuff"
@@ -8612,7 +8612,7 @@
       "id": "metalpowder",
       "name": "Metal Powder",
       "description": "An extremely fine, yet hard metal pwoder. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/metalpowder.png",
       "attributes": [
         "shinystuff"
@@ -8662,7 +8662,7 @@
       "id": "destinyknot",
       "name": "Destiny Knot",
       "description": "A long, thin, bright-red string. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/destinyknot.png",
       "attributes": [
         "slenderobjects"
@@ -8725,7 +8725,7 @@
       "id": "softsand",
       "name": "Soft Sand",
       "description": "Loose, silky sand. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/softsand.png",
       "attributes": [
         "softstuff"
@@ -8735,7 +8735,7 @@
       "id": "lightclay",
       "name": "Light Clay",
       "description": "Yellowish-green clay. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/lightclay.png",
       "attributes": [
         "softstuff",
@@ -8779,7 +8779,7 @@
       "id": "spelltag",
       "name": "Spell Tag",
       "description": "A sinister, eerie tag. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/spelltag.png",
       "attributes": [
         "spookystuff"
@@ -8829,7 +8829,7 @@
       "id": "twistedspoon",
       "name": "Twisted Spoon",
       "description": "A spoon imbued with telekinetic energy. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/twistedspoon.png",
       "attributes": [
         "strangestuff"
@@ -8839,7 +8839,7 @@
       "id": "silkscarf",
       "name": "Silk Scarf",
       "description": "A sumptuous scarf. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/silkscarf.png",
       "attributes": [
         "wobblystuff"
@@ -8849,7 +8849,7 @@
       "id": "laggingtail",
       "name": "Lagging Tail",
       "description": "A tremendously heavy tail of something. Try hanging it up in a frame!",
-      "category": null,
+      "category": "Small Lost Relic",
       "image": "images/items/laggingtail.png",
       "attributes": [
         "wobblystuff"
