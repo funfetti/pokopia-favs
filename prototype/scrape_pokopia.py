@@ -10,8 +10,9 @@ need to hit ~44 pages total (one per attribute) to build the full dataset,
 rather than scraping hundreds of individual pokemon/item pages.
 
 Output:
-  data/data.json          -- items + pokemon, each tagged with attributes
-  data/images/items/*.png -- downloaded item images (served locally, not hotlinked)
+  data/data.json             -- items + pokemon, each tagged with attributes
+  data/images/items/*.png    -- downloaded item images (served locally, not hotlinked)
+  data/images/pokemon/*.png  -- downloaded pokemon sprite images
 
 Usage:
   pip install requests beautifulsoup4 --break-system-packages
@@ -40,6 +41,7 @@ FAVORITES_PAGE = f"{BASE}/pokemonpokopia/favorites/{{slug}}.shtml"
 
 OUT_DIR = Path("data")
 IMAGES_DIR = OUT_DIR / "images" / "items"
+POKEMON_IMAGES_DIR = OUT_DIR / "images" / "pokemon"
 DATA_FILE = OUT_DIR / "data.json"
 
 # Be polite: one request at a time, with a pause between each.
@@ -89,15 +91,15 @@ def slug_from_href(href: str) -> str:
     return href.rstrip("/").split("/")[-1].replace(".shtml", "")
 
 
-def download_image(image_url: str, item_slug: str) -> str | None:
-    """Download an item image to data/images/items/, skipping if already
-    downloaded. Returns the local relative path to store in JSON."""
+def download_image(image_url: str, slug: str, images_dir: Path, rel_prefix: str) -> str | None:
+    """Download an image to images_dir/, skipping if already downloaded.
+    Returns the path (starting with rel_prefix) to store in JSON."""
     if not image_url or SKIP_IMAGES:
         return None
 
     ext = Path(image_url).suffix or ".png"
-    local_path = IMAGES_DIR / f"{item_slug}{ext}"
-    rel_path = f"images/items/{item_slug}{ext}"
+    local_path = images_dir / f"{slug}{ext}"
+    rel_path = f"{rel_prefix}/{slug}{ext}"
 
     if local_path.exists():
         return rel_path  # already downloaded, don't re-fetch
@@ -109,7 +111,7 @@ def download_image(image_url: str, item_slug: str) -> str | None:
         time.sleep(REQUEST_DELAY_SECONDS)
         return rel_path
     except requests.RequestException as e:
-        print(f"  ! failed to download image for {item_slug}: {e}")
+        print(f"  ! failed to download image for {slug}: {e}")
         return None
 
 
@@ -152,7 +154,10 @@ def parse_favorites_page(attr_name: str, attr_slug: str, items: dict, pokemon: d
                         category = cat_link.get_text(strip=True)
 
                 if item_slug not in items:
-                    local_image = download_image(image_url, item_slug) if image_url else None
+                    local_image = (
+                        download_image(image_url, item_slug, IMAGES_DIR, "images/items")
+                        if image_url else None
+                    )
                     items[item_slug] = {
                         "id": item_slug,
                         "name": item_name,
@@ -198,8 +203,9 @@ def parse_favorites_page(attr_name: str, attr_slug: str, items: dict, pokemon: d
                 pkmn_name = name_link.get_text(strip=True)
 
                 # Columns are [No., Pic, Name, Ideal Habitat, Specialty];
-                # habitat is the same on every attribute page this pokemon
-                # appears on, so it only needs to be captured once.
+                # habitat and image are the same on every attribute page
+                # this pokemon appears on, so they only need to be captured
+                # (and, for the image, downloaded) once.
                 habitat = None
                 if len(cells) > 3:
                     habitat_link = cells[3].find("a")
@@ -207,10 +213,17 @@ def parse_favorites_page(attr_name: str, attr_slug: str, items: dict, pokemon: d
                         habitat = habitat_link.get_text(strip=True)
 
                 if pkmn_slug not in pokemon:
+                    img_tag = cells[1].find("img")
+                    image_url = urljoin(BASE, img_tag["src"]) if img_tag else None
+                    local_image = (
+                        download_image(image_url, pkmn_slug, POKEMON_IMAGES_DIR, "images/pokemon")
+                        if image_url else None
+                    )
                     pokemon[pkmn_slug] = {
                         "id": pkmn_slug,
                         "name": pkmn_name,
                         "habitat": habitat,
+                        "image": local_image,
                         "attributes": [],
                     }
 
@@ -226,6 +239,7 @@ def main():
     SKIP_IMAGES = args.skip_images
 
     IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+    POKEMON_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
     print("Fetching attribute list...")
     attribute_names = get_attribute_names()
@@ -251,7 +265,8 @@ def main():
 
     DATA_FILE.write_text(json.dumps(data, indent=2), encoding="utf-8")
     print(f"\nDone. {len(items)} items, {len(pokemon)} pokemon written to {DATA_FILE}")
-    print(f"Images saved to {IMAGES_DIR}")
+    print(f"Item images saved to {IMAGES_DIR}")
+    print(f"Pokemon images saved to {POKEMON_IMAGES_DIR}")
 
 
 if __name__ == "__main__":

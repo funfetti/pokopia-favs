@@ -94,7 +94,6 @@
     width: 56px;
     height: 56px;
     border-radius: 12px;
-    background: #232230;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -514,9 +513,22 @@ inputEl.addEventListener("keydown", e => {
 function render(pokemonId) {
   const pokemon = data.pokemon.find(p => p.id === pokemonId);
 
-  // Placeholder until pokemon sprites are scraped — just the first letter.
-  pokemonThumbEl.textContent = pokemon.name[0].toUpperCase();
   pokemonThumbEl.href = pokedexUrl(pokemon.id);
+  pokemonThumbEl.innerHTML = "";
+  pokemonThumbEl.style.background = "";
+  if (pokemon.image) {
+    const img = document.createElement("img");
+    img.src = "data/" + pokemon.image;
+    img.alt = pokemon.name;
+    img.style.maxWidth = "100%";
+    img.style.maxHeight = "100%";
+    img.style.objectFit = "contain";
+    pokemonThumbEl.appendChild(img);
+  } else {
+    // fallback placeholder when no image was downloaded for this pokemon
+    pokemonThumbEl.style.background = "#232230";
+    pokemonThumbEl.textContent = pokemon.name[0].toUpperCase();
+  }
 
   pokemonHabitatEl.textContent = pokemon.habitat ? `Ideal habitat: ${pokemon.habitat}` : "";
 
