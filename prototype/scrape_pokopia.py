@@ -16,10 +16,15 @@ Output:
 Usage:
   pip install requests beautifulsoup4 --break-system-packages
   python scrape_pokopia.py
+  python scrape_pokopia.py --skip-images   # data.json only, no image downloads
+                                            # (rerun later without the flag to
+                                            # backfill images; already-downloaded
+                                            # ones are skipped, not re-fetched)
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import time
@@ -38,11 +43,14 @@ IMAGES_DIR = OUT_DIR / "images" / "items"
 DATA_FILE = OUT_DIR / "data.json"
 
 # Be polite: one request at a time, with a pause between each.
-REQUEST_DELAY_SECONDS = 1.5
+REQUEST_DELAY_SECONDS = 5
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (personal fan-project data scraper; contact: you@example.com)"
 }
+
+# Set from --skip-images in main(); when true, download_image() is a no-op.
+SKIP_IMAGES = False
 
 
 def slugify(name: str) -> str:
@@ -84,7 +92,7 @@ def slug_from_href(href: str) -> str:
 def download_image(image_url: str, item_slug: str) -> str | None:
     """Download an item image to data/images/items/, skipping if already
     downloaded. Returns the local relative path to store in JSON."""
-    if not image_url:
+    if not image_url or SKIP_IMAGES:
         return None
 
     ext = Path(image_url).suffix or ".png"
@@ -189,10 +197,20 @@ def parse_favorites_page(attr_name: str, attr_slug: str, items: dict, pokemon: d
                 pkmn_slug = slug_from_href(name_link["href"])
                 pkmn_name = name_link.get_text(strip=True)
 
+                # Columns are [No., Pic, Name, Ideal Habitat, Specialty];
+                # habitat is the same on every attribute page this pokemon
+                # appears on, so it only needs to be captured once.
+                habitat = None
+                if len(cells) > 3:
+                    habitat_link = cells[3].find("a")
+                    if habitat_link:
+                        habitat = habitat_link.get_text(strip=True)
+
                 if pkmn_slug not in pokemon:
                     pokemon[pkmn_slug] = {
                         "id": pkmn_slug,
                         "name": pkmn_name,
+                        "habitat": habitat,
                         "attributes": [],
                     }
 
@@ -201,6 +219,12 @@ def parse_favorites_page(attr_name: str, attr_slug: str, items: dict, pokemon: d
 
 
 def main():
+    global SKIP_IMAGES
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--skip-images", action="store_true", help="write data.json only; skip image downloads")
+    args = parser.parse_args()
+    SKIP_IMAGES = args.skip_images
+
     IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
     print("Fetching attribute list...")

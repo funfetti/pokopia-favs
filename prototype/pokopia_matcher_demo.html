@@ -83,17 +83,53 @@
     font-size: 13px;
     color: #6c6a7d;
   }
+  .pkp-pokemon-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .pkp-pokemon-thumb {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: #232230;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .pkp-wrap a.pkp-pokemon-thumb,
+  .pkp-wrap a.pkp-pokemon-thumb:visited {
+    color: #8f8ea3;
+    text-decoration: none;
+  }
+  .pkp-pokemon-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pkp-pokemon-habitat {
+    font-size: 12px;
+    color: #8f8ea3;
+  }
   .pkp-fav-row {
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     gap: 6px;
-    margin-bottom: 20px;
   }
   .pkp-pill {
     font-size: 12px;
     padding: 4px 10px;
     border-radius: 999px;
     border: 1px solid;
+    text-decoration: none;
+    cursor: pointer;
   }
   .pkp-items {
     display: flex;
@@ -119,7 +155,11 @@
     justify-content: center;
     font-size: 16px;
     font-weight: 500;
+  }
+  .pkp-wrap a.pkp-item-thumb,
+  .pkp-wrap a.pkp-item-thumb:visited {
     color: #f2f1f8;
+    text-decoration: none;
   }
   .pkp-item-main {
     flex: 1;
@@ -233,7 +273,13 @@
     <div class="pkp-dropdown" id="pkp-dropdown"></div>
   </div>
 
-  <div class="pkp-fav-row" id="pkp-favs"></div>
+  <div class="pkp-pokemon-row">
+    <a class="pkp-pokemon-thumb" id="pkp-pokemon-thumb" target="_blank" rel="noopener"></a>
+    <div class="pkp-pokemon-info">
+      <div class="pkp-pokemon-habitat" id="pkp-pokemon-habitat"></div>
+      <div class="pkp-fav-row" id="pkp-favs"></div>
+    </div>
+  </div>
 
   <div class="pkp-filter-row">
     <div class="pkp-category-filter">
@@ -275,6 +321,12 @@ const attrLabel = id => attrNames[id] || id;
 const inputEl = document.getElementById("pkp-input");
 const dropdownEl = document.getElementById("pkp-dropdown");
 const favsEl = document.getElementById("pkp-favs");
+const pokemonThumbEl = document.getElementById("pkp-pokemon-thumb");
+const pokemonHabitatEl = document.getElementById("pkp-pokemon-habitat");
+
+const favoritesUrl = attrId => `https://www.serebii.net/pokemonpokopia/favorites/${attrId}.shtml`;
+const pokedexUrl = pkmnId => `https://www.serebii.net/pokemonpokopia/pokedex/${pkmnId}.shtml`;
+const itemImageUrl = itemId => `https://www.serebii.net/pokemonpokopia/items/${itemId}.png`;
 const itemsEl = document.getElementById("pkp-items");
 const categoryBtnEl = document.getElementById("pkp-category-btn");
 const categoryDropdownEl = document.getElementById("pkp-category-dropdown");
@@ -462,11 +514,20 @@ inputEl.addEventListener("keydown", e => {
 function render(pokemonId) {
   const pokemon = data.pokemon.find(p => p.id === pokemonId);
 
+  // Placeholder until pokemon sprites are scraped — just the first letter.
+  pokemonThumbEl.textContent = pokemon.name[0].toUpperCase();
+  pokemonThumbEl.href = pokedexUrl(pokemon.id);
+
+  pokemonHabitatEl.textContent = pokemon.habitat ? `Ideal habitat: ${pokemon.habitat}` : "";
+
   favsEl.innerHTML = "";
   pokemon.attributes.forEach(attr => {
     const [bg, text, border] = colorFor(attr);
-    const pill = document.createElement("span");
+    const pill = document.createElement("a");
     pill.className = "pkp-pill";
+    pill.href = favoritesUrl(attr);
+    pill.target = "_blank";
+    pill.rel = "noopener";
     pill.style.background = bg;
     pill.style.color = text;
     pill.style.borderColor = border;
@@ -497,8 +558,11 @@ function render(pokemonId) {
     const card = document.createElement("div");
     card.className = "pkp-item-card";
 
-    const thumb = document.createElement("div");
+    const thumb = document.createElement("a");
     thumb.className = "pkp-item-thumb";
+    thumb.href = itemImageUrl(item.id);
+    thumb.target = "_blank";
+    thumb.rel = "noopener";
     if (item.image) {
       const img = document.createElement("img");
       img.src = "data/" + item.image;
