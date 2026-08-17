@@ -3,9 +3,15 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     max-width: 640px;
     margin: 0 auto;
-    background: #14141a;
+    background: #160f22;
     padding: 20px 16px 28px;
     border-radius: 16px;
+  }
+  .pkp-wrap a {
+    color: #8ec5ff;
+  }
+  .pkp-wrap a:visited {
+    color: #c9a8f5;
   }
   .pkp-header {
     margin-bottom: 20px;
@@ -20,6 +26,13 @@
     font-size: 13px;
     color: #8f8ea3;
     margin: 0;
+  }
+  .pkp-header-img {
+    display: block;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 10px;
   }
   .pkp-combo {
     position: relative;
@@ -211,8 +224,8 @@
 
 <div class="pkp-wrap">
   <div class="pkp-header">
-    <h1>Pokopia favorite item matcher</h1>
-    <p>Type a pokemon name, see items that share its favorite attributes</p>
+    <img class="pkp-header-img" src="pokopia-fav-header.png" alt="Pokopia favorite things" />
+    <p>Type a pokemon to see their favorite items. Data via <a href="https://www.serebii.net/pokemonpokopia/">serebii.net</a> </p>
   </div>
 
   <div class="pkp-combo">
