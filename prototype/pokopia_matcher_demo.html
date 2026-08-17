@@ -294,22 +294,25 @@
 // Populated from data/data.json at load time — see init() below.
 let data = { attributes: [], items: [], pokemon: [] };
 
-// distinct color per attribute id: [background, text, border]
-const attrColors = {
-  lotsofwater:         ["#1c2f42", "#7fb8e8", "#2f5473"],
-  oceanvibes:          ["#123a3a", "#5fd4c9", "#1f6a63"],
-  groupactivities:     ["#402313", "#f0a15c", "#6b3c1f"],
-  rides:               ["#3a1236", "#e281d8", "#672462"],
-  wobblystuff:         ["#2c2745", "#b8adf7", "#4a3f80"],
-  blocky:              ["#25304a", "#8fa8e0", "#3c4f7a"],
-  complicated:         ["#401818", "#e88585", "#6b2626"],
-  gatherings:          ["#3d3413", "#e3c96a", "#665926"],
-  exercise:            ["#153a20", "#6fd18a", "#25612f"],
-  simple:              ["#26262f", "#a3a1b5", "#3d3c4d"],
-  nature:              ["#1e3616", "#93cf6f", "#345e26"]
-};
-const defaultColor = ["#232230", "#8f8ea3", "#3a3948"];
-const colorFor = id => attrColors[id] || defaultColor;
+// Deterministic per-attribute color, generated from the id rather than
+// hand-picked, so every real attribute (all 43, not just a hand-picked
+// subset) gets a distinct, stable color: [background, text, border].
+function hashString(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash * 31 + str.charCodeAt(i)) | 0;
+  }
+  return Math.abs(hash);
+}
+
+function colorFor(id) {
+  const hue = hashString(id) % 360;
+  return [
+    `hsl(${hue}, 45%, 18%)`,
+    `hsl(${hue}, 70%, 72%)`,
+    `hsl(${hue}, 40%, 32%)`,
+  ];
+}
 
 // The URL slug (e.g. "lotsofwater") has no separators, so it can't be
 // split back into words. Populated from data.attributes ({id, name} pairs)
@@ -543,7 +546,7 @@ function render(pokemonId) {
     pill.style.background = bg;
     pill.style.color = text;
     pill.style.borderColor = border;
-    pill.textContent = attrLabel(attr);
+    pill.textContent = `${attrLabel(attr)} \u{1F517}`;
     favsEl.appendChild(pill);
   });
 
